@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState, useCallback } from "react";
+import axios from "axios";
 import styles from "./RealtimePrice.module.scss";
 
 import PriceBlock from "../PriceBlock/PriceBlock";
@@ -11,7 +12,6 @@ const getIdsForCryptoPriceApi = (cryptoList: string[]) => {
   return cryptoList.join(",");
 };
 
-const axios = require("axios").default;
 const ids = getIdsForCryptoPriceApi(cryptoList);
 
 type cryptoFeed = {
@@ -41,10 +41,15 @@ const RealtimePrice = () => {
   useEffect(() => {
     const getCryptoFeed = () => {
       axios.get(url).then((response: any) => {
-        setCryptoFeed(response.data);
-        console.log(response.data);
+        if (response.data) {
+          setCryptoFeed(response.data);
+        } else {
+          setCryptoFeed([]);
+        }
       });
     };
+
+    getCryptoFeed();
     intervalRef.current = setInterval(getCryptoFeed, 1000);
     return () => {
       clearInterval(intervalRef.current);
