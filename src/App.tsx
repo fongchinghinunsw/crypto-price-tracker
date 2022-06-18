@@ -1,4 +1,4 @@
-import RealtimePrice from "./components/RealtimePrice";
+import RealtimePrice from "./components/RealtimePrice/RealtimePrice";
 
 function App() {
   return (

@@ -1,7 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import styles from "./RealtimePrice.module.scss";
 
-import cryptoList from "../static_data/crypto_list.json";
+import PriceBlock from "../PriceBlock/PriceBlock";
+import cryptoList from "../../static_data/crypto_list.json";
 
 const getIdsForCryptoPriceApi = (cryptoList: string[]) => {
   return cryptoList.join(",");
@@ -38,11 +39,25 @@ const RealtimePrice = () => {
     };
   }, [url]);
 
+  const priceBlocks = cryptoFeed.map((crypto: any) => {
+    return (
+      <PriceBlock
+        key={crypto.id}
+        id={crypto.id}
+        name={crypto.name}
+        price={crypto.current_price}
+        volume={crypto.total_volume}
+        change={crypto.price_change_24h}
+      ></PriceBlock>
+    );
+  });
+
   return (
     <div className={styles.container}>
-      <div>
+      <div className={styles["header-section"]}>
         <h1>Cryptocurrency Realtime Price</h1>
       </div>
+      <div className={styles.priceblocks}>{priceBlocks}</div>
     </div>
   );
 };
