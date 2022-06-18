@@ -1,0 +1,6 @@
+version: "3.8"
+services:
+  crypto-price-tracker:
+    build: .
+    ports:
+      - "3000:3000"
