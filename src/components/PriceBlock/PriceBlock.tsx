@@ -15,7 +15,7 @@ const PriceBlock: React.FC<Props> = ({ id, name, price, volume, change }) => {
   change = parseFloat(change.toFixed(8));
 
   return (
-    <section className={styles.container} key={id}>
+    <section className={styles.container} key={id} data-testid="price-section">
       <div className={styles.name}>{name}</div>
       <div className={styles.price}>${price}</div>
       <div className={styles.volumechange}>
