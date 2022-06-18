@@ -1,0 +1,42 @@
+.container {
+  border: 2px solid var(--color-tint);
+  border-radius: 0.5rem;
+  padding: 0.8rem;
+
+  .name {
+    font-size: 2rem;
+    font-weight: 600;
+  }
+
+  .price {
+    color: var(--color-warning-tint);
+    font-weight: 600;
+  }
+
+  .volumechange {
+    display: flex;
+    justify-content: space-between;
+
+    .volume {
+      color: var(--color-tint);
+
+      :first-child {
+        color: var(--color-tone);
+      }
+    }
+
+    .change {
+      :first-child {
+        color: var(--color-tone);
+      }
+
+      .up {
+        color: var(--color-success-tint);
+      }
+
+      .down {
+        color: var(--color-danger-shade);
+      }
+    }
+  }
+}
