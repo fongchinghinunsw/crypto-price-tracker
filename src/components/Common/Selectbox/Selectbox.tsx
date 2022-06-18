@@ -22,7 +22,11 @@ const Selectbox: React.FC<Props> = ({ defaultOption, options, onChange }) => {
       aria-label="select currency"
     >
       {options.map((option) => {
-        return <option value={option}>{option}</option>;
+        return (
+          <option key={option} value={option}>
+            {option}
+          </option>
+        );
       })}
     </select>
   );

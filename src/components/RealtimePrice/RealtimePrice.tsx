@@ -42,7 +42,7 @@ const RealtimePrice = () => {
     const getCryptoFeed = () => {
       axios.get(url).then((response: any) => {
         setCryptoFeed(response.data);
-        console.log(response.data);
+        // console.log(response.data);
       });
     };
     intervalRef.current = setInterval(getCryptoFeed, 1000);
