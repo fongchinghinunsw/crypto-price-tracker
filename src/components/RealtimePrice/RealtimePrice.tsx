@@ -78,7 +78,10 @@ const RealtimePrice = () => {
             defaultOption={currencyList[0]}
             options={currencyList}
           />
-          <Inputbox onChange={onCryptoSearchChangeHandler} />
+          <Inputbox
+            placeHolder="Enter crypto name"
+            onChange={onCryptoSearchChangeHandler}
+          />
         </div>
       </div>
       <div className={styles.priceblocks}>{priceBlocks}</div>

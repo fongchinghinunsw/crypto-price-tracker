@@ -1,4 +1,5 @@
 type Props = {
+  placeHolder: string;
   onChange: (newValue: string) => void;
 };
 
@@ -14,7 +15,6 @@ const Inputbox: React.FC<Props> = ({ onChange }) => {
       className="form-control"
       placeholder="Enter crypto name"
       onChange={handleChange}
-      aria-label="Enter crypto name"
     />
   );
 };
