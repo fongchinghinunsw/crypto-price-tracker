@@ -4,7 +4,7 @@ import styles from "./RealtimePrice.module.scss";
 
 import PriceBlock from "../PriceBlock/PriceBlock";
 import Selectbox from "../Common/Selectbox/Selectbox";
-import Inputbox from "../Common/Inputbox/Inputbox";
+import Inputbox from "../Common/InputBox/Inputbox";
 import cryptoList from "../../static_data/crypto_list.json";
 import currencyList from "../../static_data/currency_list.json";
 
