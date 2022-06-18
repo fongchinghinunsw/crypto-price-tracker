@@ -20,10 +20,11 @@ const Selectbox: React.FC<Props> = ({ defaultOption, options, onChange }) => {
       value={value}
       onChange={handleChange}
       aria-label="select currency"
+      data-testid="select"
     >
       {options.map((option) => {
         return (
-          <option key={option} value={option}>
+          <option key={option} value={option} data-testid="select-option">
             {option}
           </option>
         );
